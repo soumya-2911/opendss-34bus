@@ -1,0 +1,29 @@
+
+Buscoords scripts/sub_scripts/utility/IEEE34_BusXY.csv
+Compile scripts/ieee34Mod1.dss
+
+
+
+New Energymeter.M1  Line.L1  1
+
+! Set time series parameters
+set mode=daily
+set stepsize=24h
+set number=10
+
+Solve
+
+
+
+Show voltage LN Nodes
+Show currents element
+show powers kva element
+
+
+plot circuit Power max=2000 y y C1=$00FF0000
+
+Plot profile phases=all
+
+Export Voltages
+Export Currents
+Export Powers

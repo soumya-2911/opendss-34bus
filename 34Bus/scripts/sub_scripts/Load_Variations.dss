@@ -1,0 +1,217 @@
+/*
+!-----------------------------------------------------------------LINEAR LOADS----------------------------------------------------------------------------------------------------------------------------------------
+
+!-------------------------------------------------------------------Load Variation------------------------------------------------------------------------------
+New Load.S860       Bus1=860   Phases=3 Conn=Wye   Model=3 kV= 24.900 kW=  60.0 kVAR=  48.0
+New Load.S840       Bus1=840   Phases=3 Conn=Wye   Model=2 kV= 24.900 kW=  27.0 kVAR=  21.0
+New Load.S844       Bus1=844   Phases=3 Conn=Wye   Model=2 kV= 24.900 kW= 405.0 kVAR= 315.0
+
+New Load.S848       Bus1=848   Phases=3 Conn=Delta Model=3 kV= 24.900 kW=  60.0 kVAR=  48.0
+New Load.S830a      Bus1=830.1.2 Phases=1 Conn=Delta Model=2 kV= 24.900 kW=  10.0 kVAR=   5.0
+New Load.S830b      Bus1=830.2.3 Phases=1 Conn=Delta Model=2 kV= 24.900 kW=  10.0 kVAR=   5.0
+New Load.S830c      Bus1=830.3.1 Phases=1 Conn=Delta Model=2 kV= 24.900 kW=  25.0 kVAR=  10.0
+New Load.S890       Bus1=890   Phases=3 Conn=Delta Model=3 kV=  4.160 kW= 450.0 kVAR= 225.0
+!----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+!--------------------------------------------------------------Load Variation ----------------------------------------------------------------------------------------
+New Load.D858_864sb Bus1=858.1 Phases=1 Conn=Wye   Model=2 kV= 14.376 kW=   1.0 kVAR=   0.5
+New Load.D858_864rb Bus1=864.1 Phases=1 Conn=Wye   Model=3 kV= 14.376 kW=   1.0 kVAR=   0.5
+
+New Load.D858_834sa Bus1=858.1.2 Phases=1 Conn=Delta Model=2 kV= 24.900 kW=   2.0 kVAR=   1.0
+New Load.D858_834ra Bus1=834.1.2 Phases=1 Conn=Delta Model=3 kV= 24.900 kW=   2.0 kVAR=   1.0
+!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+!------------------------------------------------------- Load Variation ------------------------------------------------------------------------------------------------------
+New Load.D842_844sa Bus1=842.1 Phases=1 Conn=Wye   Model=2 kV= 14.376 kW=   4.5 kVAR=   2.5
+New Load.D842_844ra Bus1=844.1 Phases=1 Conn=Wye   Model=2 kV= 14.376 kW=   4.5 kVAR=   2.5
+
+New Load.D844_846sb Bus1=844.2 Phases=1 Conn=Wye   Model=3 kV= 14.376 kW=  12.5 kVAR=   6.0
+New Load.D844_846rb Bus1=846.2 Phases=1 Conn=Wye   Model=3 kV= 14.376 kW=  12.5 kVAR=   6.0
+New Load.D844_846sc Bus1=844.3 Phases=1 Conn=Wye   Model=3 kV= 14.376 kW=  10.0 kVAR=   5.5
+New Load.D844_846rc Bus1=846.3 Phases=1 Conn=Wye   Model=2 kV= 14.376 kW=  10.0 kVAR=   5.5
+
+New Load.D846_848sb Bus1=846.2 Phases=1 Conn=Wye   Model=2 kV= 14.376 kW=  11.5 kVAR=   5.5
+New Load.D846_848rb Bus1=848.2 Phases=1 Conn=Wye   Model=3 kV= 14.376 kW=  11.5 kVAR=   5.5
+!-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+!--------------------------------------------------------------------NON LINEAR LOADS-----------------------------------------------------------------------------------------------------------------
+New  Spectrum.spectrum_2 NumHarm=8 CSVFile= utility/Spectrum_Load_2.csv
+New  Spectrum.spectrum_3 NumHarm=8 CSVFile= utility/Spectrum_Load_3.csv
+!-------------------------------------------------------------------Load Variation------------------------------------------------------------------------------
+New Load.S860       Bus1=860   Phases=3 Conn=Wye   Model=8 kV= 24.900 kW=  60.0 kVAR=  48.0 spectrum= spectrum_2
+New Load.S840       Bus1=840   Phases=3 Conn=Wye   Model=8 kV= 24.900 kW=  27.0 kVAR=  21.0 spectrum= spectrum_2
+New Load.S844       Bus1=844   Phases=3 Conn=Wye   Model=8 kV= 24.900 kW= 405.0 kVAR= 315.0 spectrum= spectrum_2
+
+New Load.S848       Bus1=848   Phases=3 Conn=Delta Model=8 kV= 24.900 kW=  60.0 kVAR=  48.0 spectrum= spectrum_2
+New Load.S830a      Bus1=830.1.2 Phases=1 Conn=Delta Model=8 kV= 24.900 kW=  10.0 kVAR=   5.0 spectrum= spectrum_3
+New Load.S830b      Bus1=830.2.3 Phases=1 Conn=Delta Model=8 kV= 24.900 kW=  10.0 kVAR=   5.0 spectrum= spectrum_3
+New Load.S830c      Bus1=830.3.1 Phases=1 Conn=Delta Model=8 kV= 24.900 kW=  25.0 kVAR=  10.0 spectrum= spectrum_3
+New Load.S890       Bus1=890   Phases=3 Conn=Delta Model=8 kV=  4.160 kW= 450.0 kVAR= 225.0 spectrum= spectrum_3
+!----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+!--------------------------------------------------------------Load Variation ----------------------------------------------------------------------------------------
+New Load.D858_864sb Bus1=858.1 Phases=1 Conn=Wye   Model=8 kV= 14.376 kW=   1.0 kVAR=   0.5 spectrum= spectrum_2
+New Load.D858_864rb Bus1=864.1 Phases=1 Conn=Wye   Model=8 kV= 14.376 kW=   1.0 kVAR=   0.5 spectrum= spectrum_3
+
+New Load.D858_834sa Bus1=858.1.2 Phases=1 Conn=Delta Model=8 kV= 24.900 kW=   2.0 kVAR=   1.0 spectrum= spectrum_3
+New Load.D858_834ra Bus1=834.1.2 Phases=1 Conn=Delta Model=8 kV= 24.900 kW=   2.0 kVAR=   1.0 spectrum= spectrum_3
+!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+!------------------------------------------------------- Load Variation ------------------------------------------------------------------------------------------------------
+New Load.D842_844sa Bus1=842.1 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=   4.5 kVAR=   2.5 spectrum= spectrum_3
+New Load.D842_844ra Bus1=844.1 Phases=1 Conn=Wye   Model=8 kV= 14.376 kW=   4.5 kVAR=   2.5 spectrum= spectrum_2
+
+New Load.D844_846sb Bus1=844.2 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  12.5 kVAR=   6.0 spectrum= spectrum_2
+New Load.D844_846rb Bus1=846.2 Phases=1 Conn=Wye   Model=8 kV= 14.376 kW=  12.5 kVAR=   6.0 spectrum= spectrum_2
+New Load.D844_846sc Bus1=844.3 Phases=1 Conn=Wye   Model=8 kV= 14.376 kW=  10.0 kVAR=   5.5 spectrum= spectrum_3
+New Load.D844_846rc Bus1=846.3 Phases=1 Conn=Wye   Model=8 kV= 14.376 kW=  10.0 kVAR=   5.5 spectrum= spectrum_2
+
+New Load.D846_848sb Bus1=846.2 Phases=1 Conn=Wye   Model=8 kV= 14.376 kW=  11.5 kVAR=   5.5 spectrum= spectrum_2
+New Load.D846_848rb Bus1=848.2 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  11.5 kVAR=   5.5 spectrum= spectrum_3
+!-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+!--------------------------------------------------------------------SWITCHING LOADS---------------------------------------------------------------------------------
+New Loadshape.step npts=20 interval=0.5 csvfile= utility/switching.csv
+!-------------------------------------------------------------------Load Variation------------------------------------------------------------------------------
+New Load.S860       Bus1=860   Phases=3 Conn=Wye   Model=1 kV= 24.900 kW=  60.0 kVAR=  48.0 daily= step
+New Load.S840       Bus1=840   Phases=3 Conn=Wye   Model=5 kV= 24.900 kW=  27.0 kVAR=  21.0 daily= step
+New Load.S844       Bus1=844   Phases=3 Conn=Wye   Model=2 kV= 24.900 kW= 405.0 kVAR= 315.0 daily= step
+
+New Load.S848       Bus1=848   Phases=3 Conn=Delta Model=1 kV= 24.900 kW=  60.0 kVAR=  48.0 daily= step
+New Load.S830a      Bus1=830.1.2 Phases=1 Conn=Delta Model=2 kV= 24.900 kW=  10.0 kVAR=   5.0 daily= step
+New Load.S830b      Bus1=830.2.3 Phases=1 Conn=Delta Model=2 kV= 24.900 kW=  10.0 kVAR=   5.0 daily= step
+New Load.S830c      Bus1=830.3.1 Phases=1 Conn=Delta Model=2 kV= 24.900 kW=  25.0 kVAR=  10.0 daily= step
+New Load.S890       Bus1=890   Phases=3 Conn=Delta Model=5 kV=  4.160 kW= 450.0 kVAR= 225.0 daily= step
+!----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+!--------------------------------------------------------------Load Variation ----------------------------------------------------------------------------------------
+New Load.D858_864sb Bus1=858.1 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=   1.0 kVAR=   0.5 daily= step
+New Load.D858_864rb Bus1=864.1 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=   1.0 kVAR=   0.5 daily= step
+
+New Load.D858_834sa Bus1=858.1.2 Phases=1 Conn=Delta Model=1 kV= 24.900 kW=   2.0 kVAR=   1.0 daily= step
+New Load.D858_834ra Bus1=834.1.2 Phases=1 Conn=Delta Model=1 kV= 24.900 kW=   2.0 kVAR=   1.0 daily= step
+!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+!------------------------------------------------------- Load Variation ------------------------------------------------------------------------------------------------------
+New Load.D842_844sa Bus1=842.1 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=   4.5 kVAR=   2.5 daily= step
+New Load.D842_844ra Bus1=844.1 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=   4.5 kVAR=   2.5 daily= step
+
+New Load.D844_846sb Bus1=844.2 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  12.5 kVAR=   6.0 daily= step
+New Load.D844_846rb Bus1=846.2 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  12.5 kVAR=   6.0 daily= step
+New Load.D844_846sc Bus1=844.3 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  10.0 kVAR=   5.5 daily= step
+New Load.D844_846rc Bus1=846.3 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  10.0 kVAR=   5.5 daily= step
+
+New Load.D846_848sb Bus1=846.2 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  11.5 kVAR=   5.5 daily= step
+New Load.D846_848rb Bus1=848.2 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  11.5 kVAR=   5.5 daily= step
+!-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+*/
+
+
+
+
+
+
+/*
+!-----------------------------------------------------------------NORMAL------------------------------------------------------------------------------------------------------------------------
+!-------------------------------------------------------------------Load Variation------------------------------------------------------------------------------
+New Load.S860       Bus1=860   Phases=3 Conn=Wye   Model=1 kV= 24.900 kW=  60.0 kVAR=  48.0
+New Load.S840       Bus1=840   Phases=3 Conn=Wye   Model=5 kV= 24.900 kW=  27.0 kVAR=  21.0
+New Load.S844       Bus1=844   Phases=3 Conn=Wye   Model=2 kV= 24.900 kW= 405.0 kVAR= 315.0
+
+New Load.S848       Bus1=848   Phases=3 Conn=Delta Model=1 kV= 24.900 kW=  60.0 kVAR=  48.0
+New Load.S830a      Bus1=830.1.2 Phases=1 Conn=Delta Model=2 kV= 24.900 kW=  10.0 kVAR=   5.0
+New Load.S830b      Bus1=830.2.3 Phases=1 Conn=Delta Model=2 kV= 24.900 kW=  10.0 kVAR=   5.0
+New Load.S830c      Bus1=830.3.1 Phases=1 Conn=Delta Model=2 kV= 24.900 kW=  25.0 kVAR=  10.0
+New Load.S890       Bus1=890   Phases=3 Conn=Delta Model=5 kV=  4.160 kW= 450.0 kVAR= 225.0
+!----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+!--------------------------------------------------------------Load Variation ----------------------------------------------------------------------------------------
+New Load.D858_864sb Bus1=858.1 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=   1.0 kVAR=   0.5
+New Load.D858_864rb Bus1=864.1 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=   1.0 kVAR=   0.5
+
+New Load.D858_834sa Bus1=858.1.2 Phases=1 Conn=Delta Model=1 kV= 24.900 kW=   2.0 kVAR=   1.0
+New Load.D858_834ra Bus1=834.1.2 Phases=1 Conn=Delta Model=1 kV= 24.900 kW=   2.0 kVAR=   1.0
+!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+!------------------------------------------------------- Load Variation ------------------------------------------------------------------------------------------------------
+New Load.D842_844sa Bus1=842.1 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=   4.5 kVAR=   2.5
+New Load.D842_844ra Bus1=844.1 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=   4.5 kVAR=   2.5
+
+New Load.D844_846sb Bus1=844.2 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  12.5 kVAR=   6.0
+New Load.D844_846rb Bus1=846.2 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  12.5 kVAR=   6.0
+New Load.D844_846sc Bus1=844.3 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  10.0 kVAR=   5.5
+New Load.D844_846rc Bus1=846.3 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  10.0 kVAR=   5.5
+
+New Load.D846_848sb Bus1=846.2 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  11.5 kVAR=   5.5
+New Load.D846_848rb Bus1=848.2 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  11.5 kVAR=   5.5
+!-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+
+
+/*
+!---------------------------------------------------------------COMBINATION--------------------------------------------------------------------------------------------------
+!-----------------------------------------------------------------LINEAR
+New Load.S860       Bus1=860   Phases=3 Conn=Wye   Model=3 kV= 24.900 kW=  60.0 kVAR=  48.0
+New Load.S840       Bus1=840   Phases=3 Conn=Wye   Model=2 kV= 24.900 kW=  27.0 kVAR=  21.0
+New Load.S844       Bus1=844   Phases=3 Conn=Wye   Model=2 kV= 24.900 kW= 405.0 kVAR= 315.0
+
+!--------------------------------------------------------------------SWITCHING
+New Loadshape.step npts=20 interval=0.5 csvfile= utility/switching.csv
+
+New Load.S848       Bus1=848   Phases=3 Conn=Delta Model=1 kV= 24.900 kW=  60.0 kVAR=  48.0 daily= step
+New Load.S830a      Bus1=830.1.2 Phases=1 Conn=Delta Model=2 kV= 24.900 kW=  10.0 kVAR=   5.0 daily= step
+New Load.S830b      Bus1=830.2.3 Phases=1 Conn=Delta Model=2 kV= 24.900 kW=  10.0 kVAR=   5.0 daily= step
+New Load.S830c      Bus1=830.3.1 Phases=1 Conn=Delta Model=2 kV= 24.900 kW=  25.0 kVAR=  10.0 daily= step
+New Load.S890       Bus1=890   Phases=3 Conn=Delta Model=5 kV=  4.160 kW= 450.0 kVAR= 225.0 daily= step
+
+New Load.D858_864sb Bus1=858.1 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=   1.0 kVAR=   0.5 daily= step
+New Load.D858_864rb Bus1=864.1 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=   1.0 kVAR=   0.5 daily= step
+
+New Load.D858_834sa Bus1=858.1.2 Phases=1 Conn=Delta Model=1 kV= 24.900 kW=   2.0 kVAR=   1.0 daily= step
+New Load.D858_834ra Bus1=834.1.2 Phases=1 Conn=Delta Model=1 kV= 24.900 kW=   2.0 kVAR=   1.0 daily= step
+
+!---------------------------------------------------------constant
+
+New Load.D842_844sa Bus1=842.1 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=   4.5 kVAR=   2.5
+New Load.D842_844ra Bus1=844.1 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=   4.5 kVAR=   2.5
+
+New Load.D844_846sb Bus1=844.2 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  12.5 kVAR=   6.0
+New Load.D844_846rb Bus1=846.2 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  12.5 kVAR=   6.0
+New Load.D844_846sc Bus1=844.3 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  10.0 kVAR=   5.5
+New Load.D844_846rc Bus1=846.3 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  10.0 kVAR=   5.5
+
+New Load.D846_848sb Bus1=846.2 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  11.5 kVAR=   5.5
+New Load.D846_848rb Bus1=848.2 Phases=1 Conn=Wye   Model=1 kV= 14.376 kW=  11.5 kVAR=   5.5
+
+*/
