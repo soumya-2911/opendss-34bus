@@ -43,26 +43,6 @@ To study the impact of distorted and dynamic loading conditions on voltage perfo
 
 ---
 
-## 🗂️ File Architecture
-
-34Bus/
-├── Scripts/
-│   ├── ieee34Mod1.dss                # Main DSS script for IEEE 34-bus simulation
-│   └── subscripts/
-│       ├── LoadVariations.dss        # Defines time-series load variations
-│       ├── IEEELineCodes.dss         # Line code definitions for IEEE 34-bus
-│       └── utility/
-│           ├── IEEE34_BusXY.dss      # Coordinate data for bus plotting
-│           ├── switching.csv         # Load step changes for switching loads
-│           ├── Spectrum_Load_2.csv   # Harmonic spectrum for load group 2
-│           └── Spectrum_Load_3.csv   # Harmonic spectrum for load group 3
-├── Test Runs/                        # Folder for simulation outputs/results
-├── RunIEEE34Mod1.dss                 # Master script to run the entire simulation
-
-
-
-
----
 
 ## 🔧 Tools & Technologies
 
